@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20171023222414) do
     t.string "title"
     t.bigint "publisher_id"
     t.bigint "author_id"
+    t.bigint "book_formats_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["book_formats_id"], name: "index_books_on_book_formats_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
