@@ -35,7 +35,7 @@ class Book < ApplicationRecord
     elsif (options[:book_format_type_id] != nil)
       books = books.select { |book| book.book_format_id == options[:book_format_type_id]}
     elsif (options[:book_format_physical])
-      
+      #Todo Need to join with book_formats table to search against phyical only formats
     end
     books.uniq
   end
