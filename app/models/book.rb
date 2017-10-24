@@ -8,4 +8,19 @@ class Book < ApplicationRecord
 
   belongs_to :publisher
   belongs_to :author
+
+  def author_name
+    first_name = self.author.first_name
+    last_name = self.author.last_name
+
+    "#{last_name}, #{first_name}"
+  end
+
+  def format_types
+    self.formats
+  end
+
+  # def average_rating
+
+  # end
 end
