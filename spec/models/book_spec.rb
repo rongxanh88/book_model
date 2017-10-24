@@ -45,6 +45,10 @@ RSpec.describe Book, type: :model do
   end
 
   describe "book class methods" do
+    xit "searches for books based on author name" do
+      books = ["A Game of Thrones", "A Song of Ice and Fire"]
 
+      # allow(Book).to receive()
+    end
   end
 end
