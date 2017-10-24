@@ -35,12 +35,13 @@ RSpec.describe Book, type: :model do
       expect(book.author_name).to eq("Martin, George")
     end
 
-    # it "returns the average rating for the book" do
-    #   ratings = [5,5,4,3,3,5]
-    #   book = Book.new(title: "A Game of Thrones")
+    it "returns the average rating for the book" do
+      ratings = [5,5,4,3,3,5]
+      book = Book.new(title: "A Game of Thrones")
+      allow(book).to receive(:book_reviews).and_return(ratings)
 
-    #   expect(book.average_rating).to eq(4.2)
-    # end
+      expect(book.average_rating).to eq(4.2)
+    end
   end
 
   describe "book class methods" do

@@ -20,7 +20,8 @@ class Book < ApplicationRecord
     self.formats
   end
 
-  # def average_rating
-
-  # end
+  def average_rating
+    total = self.book_reviews.inject(0) { |sum, review| sum + review }
+    (total.to_f / self.book_reviews.count).round(1)
+  end
 end
